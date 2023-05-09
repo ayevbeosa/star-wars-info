@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:stars_wars_info/common/bloc_observer/app_bloc_observer.dart';
 import 'package:stars_wars_info/common/network/network_service_impl.dart';
 import 'package:stars_wars_info/common/routing/routes.dart';
+import 'package:stars_wars_info/modules/films/domain/films_repository_impl.dart';
 import 'package:stars_wars_info/modules/people/bloc/people_bloc.dart';
 import 'package:stars_wars_info/modules/people/domain/people_repository_impl.dart';
 
@@ -28,6 +29,11 @@ class MyApp extends StatelessWidget {
         ),
         RepositoryProvider(
           create: (context) => PeopleRepositoryImpl(
+            context.read<NetworkServiceImpl>(),
+          ),
+        ),
+        RepositoryProvider(
+          create: (context) => FilmsRepositoryImpl(
             context.read<NetworkServiceImpl>(),
           ),
         ),
