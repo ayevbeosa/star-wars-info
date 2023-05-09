@@ -45,14 +45,70 @@ class _PeopleDetailsScreenState extends State<PeopleDetailsScreen> {
                         peopleEntity.name,
                         style: Theme.of(context).textTheme.displaySmall,
                       ),
-                      const VerticalSpace(),
-                      Text('Height: ${peopleEntity.height}m'),
-                      Text('Mass: ${peopleEntity.mass}kg'),
-                      Text('Hair Color: ${peopleEntity.hairColor}'),
-                      Text('Skin Color: ${peopleEntity.skinColor}'),
-                      Text('Eye Color: ${peopleEntity.eyeColor}'),
-                      Text('Birth Year: ${peopleEntity.birthYear}'),
-                      Text('Gender: ${peopleEntity.gender}'),
+                      const VerticalSpace(value: 24.0),
+                      ListTile(
+                        title: Text('Height: ${peopleEntity.height}m'),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text('Mass: ${peopleEntity.mass}kg'),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text('Hair Color: ${peopleEntity.hairColor}'),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text('Skin Color: ${peopleEntity.skinColor}'),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text('Eye Color: ${peopleEntity.eyeColor}'),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text('Birth Year: ${peopleEntity.birthYear}'),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        title: Text('Gender: ${peopleEntity.gender}'),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.secondary,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 );
