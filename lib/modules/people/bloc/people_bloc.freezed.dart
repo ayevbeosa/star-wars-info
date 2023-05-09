@@ -317,6 +317,8 @@ mixin _$PeopleState {
     required TResult Function() loading,
     required TResult Function(PeopleEntityResponse peopleEntityResponse)
         peopleLoaded,
+    required TResult Function(PeopleEntityResponse peopleEntityResponse)
+        morePeopleLoaded,
     required TResult Function(PeopleEntity peopleEntity) peopleByIdLoaded,
     required TResult Function(DataException dataException) failure,
   }) =>
@@ -326,6 +328,8 @@ mixin _$PeopleState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult? Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult? Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult? Function(DataException dataException)? failure,
   }) =>
@@ -335,6 +339,8 @@ mixin _$PeopleState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult Function(DataException dataException)? failure,
     required TResult orElse(),
@@ -345,6 +351,7 @@ mixin _$PeopleState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_PeopleLoadingState value) loading,
     required TResult Function(_PeopleLoadedState value) peopleLoaded,
+    required TResult Function(_MorePeopleLoadedState value) morePeopleLoaded,
     required TResult Function(_PeopleByIdLoadedState value) peopleByIdLoaded,
     required TResult Function(_PeopleFailureState value) failure,
   }) =>
@@ -354,6 +361,7 @@ mixin _$PeopleState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PeopleLoadingState value)? loading,
     TResult? Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult? Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult? Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult? Function(_PeopleFailureState value)? failure,
   }) =>
@@ -363,6 +371,7 @@ mixin _$PeopleState {
     TResult Function(_Initial value)? initial,
     TResult Function(_PeopleLoadingState value)? loading,
     TResult Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult Function(_PeopleFailureState value)? failure,
     required TResult orElse(),
@@ -429,6 +438,8 @@ class _$_Initial implements _Initial {
     required TResult Function() loading,
     required TResult Function(PeopleEntityResponse peopleEntityResponse)
         peopleLoaded,
+    required TResult Function(PeopleEntityResponse peopleEntityResponse)
+        morePeopleLoaded,
     required TResult Function(PeopleEntity peopleEntity) peopleByIdLoaded,
     required TResult Function(DataException dataException) failure,
   }) {
@@ -441,6 +452,8 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult? Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult? Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult? Function(DataException dataException)? failure,
   }) {
@@ -453,6 +466,8 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult Function(DataException dataException)? failure,
     required TResult orElse(),
@@ -469,6 +484,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_PeopleLoadingState value) loading,
     required TResult Function(_PeopleLoadedState value) peopleLoaded,
+    required TResult Function(_MorePeopleLoadedState value) morePeopleLoaded,
     required TResult Function(_PeopleByIdLoadedState value) peopleByIdLoaded,
     required TResult Function(_PeopleFailureState value) failure,
   }) {
@@ -481,6 +497,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PeopleLoadingState value)? loading,
     TResult? Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult? Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult? Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult? Function(_PeopleFailureState value)? failure,
   }) {
@@ -493,6 +510,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_PeopleLoadingState value)? loading,
     TResult Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult Function(_PeopleFailureState value)? failure,
     required TResult orElse(),
@@ -550,6 +568,8 @@ class _$_PeopleLoadingState implements _PeopleLoadingState {
     required TResult Function() loading,
     required TResult Function(PeopleEntityResponse peopleEntityResponse)
         peopleLoaded,
+    required TResult Function(PeopleEntityResponse peopleEntityResponse)
+        morePeopleLoaded,
     required TResult Function(PeopleEntity peopleEntity) peopleByIdLoaded,
     required TResult Function(DataException dataException) failure,
   }) {
@@ -562,6 +582,8 @@ class _$_PeopleLoadingState implements _PeopleLoadingState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult? Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult? Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult? Function(DataException dataException)? failure,
   }) {
@@ -574,6 +596,8 @@ class _$_PeopleLoadingState implements _PeopleLoadingState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult Function(DataException dataException)? failure,
     required TResult orElse(),
@@ -590,6 +614,7 @@ class _$_PeopleLoadingState implements _PeopleLoadingState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_PeopleLoadingState value) loading,
     required TResult Function(_PeopleLoadedState value) peopleLoaded,
+    required TResult Function(_MorePeopleLoadedState value) morePeopleLoaded,
     required TResult Function(_PeopleByIdLoadedState value) peopleByIdLoaded,
     required TResult Function(_PeopleFailureState value) failure,
   }) {
@@ -602,6 +627,7 @@ class _$_PeopleLoadingState implements _PeopleLoadingState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PeopleLoadingState value)? loading,
     TResult? Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult? Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult? Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult? Function(_PeopleFailureState value)? failure,
   }) {
@@ -614,6 +640,7 @@ class _$_PeopleLoadingState implements _PeopleLoadingState {
     TResult Function(_Initial value)? initial,
     TResult Function(_PeopleLoadingState value)? loading,
     TResult Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult Function(_PeopleFailureState value)? failure,
     required TResult orElse(),
@@ -710,6 +737,8 @@ class _$_PeopleLoadedState implements _PeopleLoadedState {
     required TResult Function() loading,
     required TResult Function(PeopleEntityResponse peopleEntityResponse)
         peopleLoaded,
+    required TResult Function(PeopleEntityResponse peopleEntityResponse)
+        morePeopleLoaded,
     required TResult Function(PeopleEntity peopleEntity) peopleByIdLoaded,
     required TResult Function(DataException dataException) failure,
   }) {
@@ -722,6 +751,8 @@ class _$_PeopleLoadedState implements _PeopleLoadedState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult? Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult? Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult? Function(DataException dataException)? failure,
   }) {
@@ -734,6 +765,8 @@ class _$_PeopleLoadedState implements _PeopleLoadedState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult Function(DataException dataException)? failure,
     required TResult orElse(),
@@ -750,6 +783,7 @@ class _$_PeopleLoadedState implements _PeopleLoadedState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_PeopleLoadingState value) loading,
     required TResult Function(_PeopleLoadedState value) peopleLoaded,
+    required TResult Function(_MorePeopleLoadedState value) morePeopleLoaded,
     required TResult Function(_PeopleByIdLoadedState value) peopleByIdLoaded,
     required TResult Function(_PeopleFailureState value) failure,
   }) {
@@ -762,6 +796,7 @@ class _$_PeopleLoadedState implements _PeopleLoadedState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PeopleLoadingState value)? loading,
     TResult? Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult? Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult? Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult? Function(_PeopleFailureState value)? failure,
   }) {
@@ -774,6 +809,7 @@ class _$_PeopleLoadedState implements _PeopleLoadedState {
     TResult Function(_Initial value)? initial,
     TResult Function(_PeopleLoadingState value)? loading,
     TResult Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult Function(_PeopleFailureState value)? failure,
     required TResult orElse(),
@@ -792,6 +828,182 @@ abstract class _PeopleLoadedState implements PeopleState {
   PeopleEntityResponse get peopleEntityResponse;
   @JsonKey(ignore: true)
   _$$_PeopleLoadedStateCopyWith<_$_PeopleLoadedState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_MorePeopleLoadedStateCopyWith<$Res> {
+  factory _$$_MorePeopleLoadedStateCopyWith(_$_MorePeopleLoadedState value,
+          $Res Function(_$_MorePeopleLoadedState) then) =
+      __$$_MorePeopleLoadedStateCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PeopleEntityResponse peopleEntityResponse});
+
+  $PeopleEntityResponseCopyWith<$Res> get peopleEntityResponse;
+}
+
+/// @nodoc
+class __$$_MorePeopleLoadedStateCopyWithImpl<$Res>
+    extends _$PeopleStateCopyWithImpl<$Res, _$_MorePeopleLoadedState>
+    implements _$$_MorePeopleLoadedStateCopyWith<$Res> {
+  __$$_MorePeopleLoadedStateCopyWithImpl(_$_MorePeopleLoadedState _value,
+      $Res Function(_$_MorePeopleLoadedState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? peopleEntityResponse = null,
+  }) {
+    return _then(_$_MorePeopleLoadedState(
+      null == peopleEntityResponse
+          ? _value.peopleEntityResponse
+          : peopleEntityResponse // ignore: cast_nullable_to_non_nullable
+              as PeopleEntityResponse,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PeopleEntityResponseCopyWith<$Res> get peopleEntityResponse {
+    return $PeopleEntityResponseCopyWith<$Res>(_value.peopleEntityResponse,
+        (value) {
+      return _then(_value.copyWith(peopleEntityResponse: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_MorePeopleLoadedState implements _MorePeopleLoadedState {
+  const _$_MorePeopleLoadedState(this.peopleEntityResponse);
+
+  @override
+  final PeopleEntityResponse peopleEntityResponse;
+
+  @override
+  String toString() {
+    return 'PeopleState.morePeopleLoaded(peopleEntityResponse: $peopleEntityResponse)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MorePeopleLoadedState &&
+            (identical(other.peopleEntityResponse, peopleEntityResponse) ||
+                other.peopleEntityResponse == peopleEntityResponse));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, peopleEntityResponse);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MorePeopleLoadedStateCopyWith<_$_MorePeopleLoadedState> get copyWith =>
+      __$$_MorePeopleLoadedStateCopyWithImpl<_$_MorePeopleLoadedState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(PeopleEntityResponse peopleEntityResponse)
+        peopleLoaded,
+    required TResult Function(PeopleEntityResponse peopleEntityResponse)
+        morePeopleLoaded,
+    required TResult Function(PeopleEntity peopleEntity) peopleByIdLoaded,
+    required TResult Function(DataException dataException) failure,
+  }) {
+    return morePeopleLoaded(peopleEntityResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult? Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
+    TResult? Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
+    TResult? Function(DataException dataException)? failure,
+  }) {
+    return morePeopleLoaded?.call(peopleEntityResponse);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
+    TResult Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
+    TResult Function(DataException dataException)? failure,
+    required TResult orElse(),
+  }) {
+    if (morePeopleLoaded != null) {
+      return morePeopleLoaded(peopleEntityResponse);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_PeopleLoadingState value) loading,
+    required TResult Function(_PeopleLoadedState value) peopleLoaded,
+    required TResult Function(_MorePeopleLoadedState value) morePeopleLoaded,
+    required TResult Function(_PeopleByIdLoadedState value) peopleByIdLoaded,
+    required TResult Function(_PeopleFailureState value) failure,
+  }) {
+    return morePeopleLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_PeopleLoadingState value)? loading,
+    TResult? Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult? Function(_MorePeopleLoadedState value)? morePeopleLoaded,
+    TResult? Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
+    TResult? Function(_PeopleFailureState value)? failure,
+  }) {
+    return morePeopleLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_PeopleLoadingState value)? loading,
+    TResult Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult Function(_MorePeopleLoadedState value)? morePeopleLoaded,
+    TResult Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
+    TResult Function(_PeopleFailureState value)? failure,
+    required TResult orElse(),
+  }) {
+    if (morePeopleLoaded != null) {
+      return morePeopleLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _MorePeopleLoadedState implements PeopleState {
+  const factory _MorePeopleLoadedState(
+          final PeopleEntityResponse peopleEntityResponse) =
+      _$_MorePeopleLoadedState;
+
+  PeopleEntityResponse get peopleEntityResponse;
+  @JsonKey(ignore: true)
+  _$$_MorePeopleLoadedStateCopyWith<_$_MorePeopleLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -875,6 +1087,8 @@ class _$_PeopleByIdLoadedState implements _PeopleByIdLoadedState {
     required TResult Function() loading,
     required TResult Function(PeopleEntityResponse peopleEntityResponse)
         peopleLoaded,
+    required TResult Function(PeopleEntityResponse peopleEntityResponse)
+        morePeopleLoaded,
     required TResult Function(PeopleEntity peopleEntity) peopleByIdLoaded,
     required TResult Function(DataException dataException) failure,
   }) {
@@ -887,6 +1101,8 @@ class _$_PeopleByIdLoadedState implements _PeopleByIdLoadedState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult? Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult? Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult? Function(DataException dataException)? failure,
   }) {
@@ -899,6 +1115,8 @@ class _$_PeopleByIdLoadedState implements _PeopleByIdLoadedState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult Function(DataException dataException)? failure,
     required TResult orElse(),
@@ -915,6 +1133,7 @@ class _$_PeopleByIdLoadedState implements _PeopleByIdLoadedState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_PeopleLoadingState value) loading,
     required TResult Function(_PeopleLoadedState value) peopleLoaded,
+    required TResult Function(_MorePeopleLoadedState value) morePeopleLoaded,
     required TResult Function(_PeopleByIdLoadedState value) peopleByIdLoaded,
     required TResult Function(_PeopleFailureState value) failure,
   }) {
@@ -927,6 +1146,7 @@ class _$_PeopleByIdLoadedState implements _PeopleByIdLoadedState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PeopleLoadingState value)? loading,
     TResult? Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult? Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult? Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult? Function(_PeopleFailureState value)? failure,
   }) {
@@ -939,6 +1159,7 @@ class _$_PeopleByIdLoadedState implements _PeopleByIdLoadedState {
     TResult Function(_Initial value)? initial,
     TResult Function(_PeopleLoadingState value)? loading,
     TResult Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult Function(_PeopleFailureState value)? failure,
     required TResult orElse(),
@@ -1030,6 +1251,8 @@ class _$_PeopleFailureState implements _PeopleFailureState {
     required TResult Function() loading,
     required TResult Function(PeopleEntityResponse peopleEntityResponse)
         peopleLoaded,
+    required TResult Function(PeopleEntityResponse peopleEntityResponse)
+        morePeopleLoaded,
     required TResult Function(PeopleEntity peopleEntity) peopleByIdLoaded,
     required TResult Function(DataException dataException) failure,
   }) {
@@ -1042,6 +1265,8 @@ class _$_PeopleFailureState implements _PeopleFailureState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult? Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult? Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult? Function(DataException dataException)? failure,
   }) {
@@ -1054,6 +1279,8 @@ class _$_PeopleFailureState implements _PeopleFailureState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(PeopleEntityResponse peopleEntityResponse)? peopleLoaded,
+    TResult Function(PeopleEntityResponse peopleEntityResponse)?
+        morePeopleLoaded,
     TResult Function(PeopleEntity peopleEntity)? peopleByIdLoaded,
     TResult Function(DataException dataException)? failure,
     required TResult orElse(),
@@ -1070,6 +1297,7 @@ class _$_PeopleFailureState implements _PeopleFailureState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_PeopleLoadingState value) loading,
     required TResult Function(_PeopleLoadedState value) peopleLoaded,
+    required TResult Function(_MorePeopleLoadedState value) morePeopleLoaded,
     required TResult Function(_PeopleByIdLoadedState value) peopleByIdLoaded,
     required TResult Function(_PeopleFailureState value) failure,
   }) {
@@ -1082,6 +1310,7 @@ class _$_PeopleFailureState implements _PeopleFailureState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_PeopleLoadingState value)? loading,
     TResult? Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult? Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult? Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult? Function(_PeopleFailureState value)? failure,
   }) {
@@ -1094,6 +1323,7 @@ class _$_PeopleFailureState implements _PeopleFailureState {
     TResult Function(_Initial value)? initial,
     TResult Function(_PeopleLoadingState value)? loading,
     TResult Function(_PeopleLoadedState value)? peopleLoaded,
+    TResult Function(_MorePeopleLoadedState value)? morePeopleLoaded,
     TResult Function(_PeopleByIdLoadedState value)? peopleByIdLoaded,
     TResult Function(_PeopleFailureState value)? failure,
     required TResult orElse(),

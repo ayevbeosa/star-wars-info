@@ -16,10 +16,14 @@ class PeopleScreen extends StatefulWidget {
 
 class _PeopleScreenState extends State<PeopleScreen> {
   List<PeopleEntity> _people = [];
+  final _scrollController = ScrollController();
+  bool _firstAutoscrollExecuted = false;
+  bool _shouldAutoscroll = false;
 
   @override
   void initState() {
     context.read<PeopleBloc>().add(const GetPeople());
+    _scrollController.addListener(_scrollListener);
     super.initState();
   }
 
@@ -38,11 +42,32 @@ class _PeopleScreenState extends State<PeopleScreen> {
                         child: CircularProgressIndicator(),
                       );
               },
+              loading: () {
+                return _people.isNotEmpty
+                    ? Column(
+                        children: [
+                          Expanded(
+                            child: buildListView(),
+                          ),
+                          const CircularProgressIndicator(),
+                        ],
+                      )
+                    : const Center(
+                        child: CircularProgressIndicator(),
+                      );
+              },
               failure: (dataException) {
                 return const GetPeopleFailure();
               },
               peopleLoaded: (peopleEntityResponse) {
                 _people = List.from(peopleEntityResponse.results);
+
+                return buildListView();
+              },
+              morePeopleLoaded: (peopleEntityResponse) {
+                _people.addAll(List.from(peopleEntityResponse.results));
+
+                _scrollToBottom();
 
                 return buildListView();
               },
@@ -53,8 +78,15 @@ class _PeopleScreenState extends State<PeopleScreen> {
     );
   }
 
+  @override
+  void dispose() {
+    _scrollController.removeListener(_scrollListener);
+    super.dispose();
+  }
+
   Widget buildListView() {
-    return ListView.builder(
+    return ListView.separated(
+      controller: _scrollController,
       itemCount: _people.length,
       itemBuilder: (context, index) {
         final peopleEntity = _people[index];
@@ -72,6 +104,43 @@ class _PeopleScreenState extends State<PeopleScreen> {
           ),
         );
       },
+      separatorBuilder: (context, index) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          child: Divider(color: Colors.grey),
+        );
+      },
     );
+  }
+
+  void _scrollToBottom() {
+    if (_scrollController.hasClients && _shouldAutoscroll) {
+      _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeIn,
+      );
+    }
+
+    if (!_firstAutoscrollExecuted && _scrollController.hasClients) {
+      _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 800),
+        curve: Curves.easeIn,
+      );
+    }
+  }
+
+  void _scrollListener() {
+    _firstAutoscrollExecuted = true;
+
+    if (_scrollController.hasClients &&
+        _scrollController.position.pixels ==
+            _scrollController.position.maxScrollExtent) {
+      BlocProvider.of<PeopleBloc>(context).add(const GetPeople());
+      _shouldAutoscroll = true;
+    } else {
+      _shouldAutoscroll = false;
+    }
   }
 }

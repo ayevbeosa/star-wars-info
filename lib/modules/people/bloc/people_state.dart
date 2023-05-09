@@ -7,6 +7,9 @@ class PeopleState with _$PeopleState {
   const factory PeopleState.peopleLoaded(
     PeopleEntityResponse peopleEntityResponse,
   ) = _PeopleLoadedState;
+  const factory PeopleState.morePeopleLoaded(
+    PeopleEntityResponse peopleEntityResponse,
+  ) = _MorePeopleLoadedState;
   const factory PeopleState.peopleByIdLoaded(
     PeopleEntity peopleEntity,
   ) = _PeopleByIdLoadedState;

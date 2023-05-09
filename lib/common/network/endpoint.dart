@@ -2,7 +2,7 @@ class Endpoint {
   static const String baseUrl = 'https://swapi.dev/api/';
 
   // People
-  static const String getPeople = '/people/';
+  static String getPeople(int pageNo) => '/people?page=$pageNo';
   static String getPeopleById(String id) => '/people/$id/';
 
   // Films

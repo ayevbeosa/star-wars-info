@@ -11,6 +11,8 @@ part 'people_state.dart';
 class PeopleBloc extends Bloc<PeopleEvent, PeopleState> {
   final PeopleRepository _peopleRepository;
 
+  int currentPage = 1;
+
   PeopleBloc(this._peopleRepository) : super(const PeopleState.initial()) {
     on<GetPeople>(_getPeople);
     on<GetPeopleById>(_getPeopleById);
@@ -19,11 +21,18 @@ class PeopleBloc extends Bloc<PeopleEvent, PeopleState> {
   Future<void> _getPeople(GetPeople event, Emitter<PeopleState> emit) async {
     emit(const PeopleState.loading());
 
-    final result = await _peopleRepository.getPeople();
+    final result = await _peopleRepository.getPeople(currentPage);
 
     result.fold(
       (l) => emit(PeopleState.failure(l)),
-      (r) => emit(PeopleState.peopleLoaded(r)),
+      (r) {
+        if (currentPage == 1) {
+          emit(PeopleState.peopleLoaded(r));
+        } else {
+          emit(PeopleState.morePeopleLoaded(r));
+        }
+        currentPage++;
+      },
     );
   }
 

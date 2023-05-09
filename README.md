@@ -1,16 +1,21 @@
-# stars_wars_info
+# Star Wars Info
 
-A new Flutter project.
+A Flutter project to show relevant info about Star Wars.
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+Navigation 2.0 - [go_router](https://pub.dev/packages/go_router)
+State Management - [flutter_bloc](https://pub.dev/packages/flutter_bloc)
+Dependency Injection - [flutter_bloc (RepositoryProvider)](https://pub.dev/packages/flutter_bloc)
+Network Request/Response - [dio](https://pub.dev/packages/dio)
+Network Request/Response Logging - [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger)
+Theming - [flex_color_scheme](https://pub.dev/packages/flex_color_scheme)
+Fonts - [google_fonts](https://pub.dev/packages/google_fonts)
+Data/Model Classes - [freezed](https://pub.dev/packages/freezed)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## TODO
+1. [ ] films
+2. [ ] planets
+3. [ ] species
+4. [ ] starships
+5. [ ] vehicles

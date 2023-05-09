@@ -9,10 +9,11 @@ class PeopleRepository {
 
   PeopleRepository(this._networkService);
 
-  Future<Either<DataException, PeopleEntityResponse>> getPeople() async {
+  Future<Either<DataException, PeopleEntityResponse>> getPeople(
+      int pageNo) async {
     try {
       final response = await _networkService.call(
-        path: Endpoint.getPeople,
+        path: Endpoint.getPeople(pageNo),
         method: RequestMethod.get,
       );
 
