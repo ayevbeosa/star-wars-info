@@ -19,6 +19,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
   final _scrollController = ScrollController();
   bool _firstAutoscrollExecuted = false;
   bool _shouldAutoscroll = false;
+  bool _hasNextPage = true;
 
   @override
   void initState() {
@@ -65,6 +66,7 @@ class _PeopleScreenState extends State<PeopleScreen> {
                 return buildListView();
               },
               morePeopleLoaded: (peopleEntityResponse) {
+                _hasNextPage = peopleEntityResponse.next != null;
                 _people.addAll(List.from(peopleEntityResponse.results));
 
                 _scrollToBottom();
@@ -137,7 +139,9 @@ class _PeopleScreenState extends State<PeopleScreen> {
     if (_scrollController.hasClients &&
         _scrollController.position.pixels ==
             _scrollController.position.maxScrollExtent) {
-      BlocProvider.of<PeopleBloc>(context).add(const GetPeople());
+      if (_hasNextPage) {
+        BlocProvider.of<PeopleBloc>(context).add(const GetPeople());
+      }
       _shouldAutoscroll = true;
     } else {
       _shouldAutoscroll = false;
