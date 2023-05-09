@@ -32,8 +32,7 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(
             lazy: false,
-            create: (context) => PeopleBloc(context.read<PeopleRepository>())
-              ..add(const GetPeople()),
+            create: (context) => PeopleBloc(context.read<PeopleRepository>()),
           ),
         ],
         child: MaterialApp.router(

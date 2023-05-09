@@ -18,6 +18,12 @@ class _PeopleScreenState extends State<PeopleScreen> {
   List<PeopleEntity> _people = [];
 
   @override
+  void initState() {
+    context.read<PeopleBloc>().add(const GetPeople());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
@@ -62,7 +68,8 @@ class _PeopleScreenState extends State<PeopleScreen> {
           },
           title: Text(peopleEntity.name),
           subtitle: Text(
-              '${peopleEntity.gender.capitalize} | ${peopleEntity.height}m | ${peopleEntity.eyeColor.capitalize} Eyes'),
+            '${peopleEntity.gender.capitalize} | ${peopleEntity.height}m | ${peopleEntity.eyeColor.capitalize} Eyes',
+          ),
         );
       },
     );
