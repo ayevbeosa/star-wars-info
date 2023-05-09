@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stars_wars_info/common/widgets/vertical_space.dart';
 import 'package:stars_wars_info/modules/people/bloc/people_bloc.dart';
+import 'package:stars_wars_info/modules/people/domain/people_repository.dart';
 
 class PeopleDetailsScreen extends StatefulWidget {
   final String id;
@@ -16,9 +17,12 @@ class PeopleDetailsScreen extends StatefulWidget {
 }
 
 class _PeopleDetailsScreenState extends State<PeopleDetailsScreen> {
+  late final PeopleBloc _peopleBloc;
+
   @override
   void initState() {
-    context.read<PeopleBloc>().add(GetPeopleById(widget.id));
+    _peopleBloc = PeopleBloc(context.read<PeopleRepository>())
+      ..add(GetPeopleById(widget.id));
     super.initState();
   }
 
@@ -28,6 +32,7 @@ class _PeopleDetailsScreenState extends State<PeopleDetailsScreen> {
       appBar: AppBar(),
       body: SafeArea(
         child: BlocBuilder<PeopleBloc, PeopleState>(
+          bloc: _peopleBloc,
           builder: (context, state) {
             return state.maybeWhen(
               orElse: () {
