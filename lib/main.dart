@@ -2,12 +2,17 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stars_wars_info/common/bloc_observer/app_bloc_observer.dart';
 import 'package:stars_wars_info/common/network/network_service_impl.dart';
 import 'package:stars_wars_info/common/routing/routes.dart';
 import 'package:stars_wars_info/modules/people/bloc/people_bloc.dart';
 import 'package:stars_wars_info/modules/people/domain/people_repository.dart';
+import 'package:stars_wars_info/modules/people/domain/people_repository_impl.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = AppBlocObserver();
+
   runApp(const MyApp());
 }
 
@@ -23,7 +28,7 @@ class MyApp extends StatelessWidget {
           create: (context) => NetworkServiceImpl(),
         ),
         RepositoryProvider(
-          create: (context) => PeopleRepository(
+          create: (context) => PeopleRepositoryImpl(
             context.read<NetworkServiceImpl>(),
           ),
         ),
