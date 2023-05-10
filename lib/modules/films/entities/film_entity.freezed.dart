@@ -21,10 +21,13 @@ FilmEntity _$FilmEntityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FilmEntity {
   String get title => throw _privateConstructorUsedError;
+  @JsonKey(name: 'episode_id')
   int get episodeId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'opening_crawl')
   String get openingCrawl => throw _privateConstructorUsedError;
   String get director => throw _privateConstructorUsedError;
   String get producer => throw _privateConstructorUsedError;
+  @JsonKey(name: 'release_date')
   DateTime get releaseDate => throw _privateConstructorUsedError;
   List<String> get characters => throw _privateConstructorUsedError;
   List<String> get planets => throw _privateConstructorUsedError;
@@ -49,11 +52,11 @@ abstract class $FilmEntityCopyWith<$Res> {
   @useResult
   $Res call(
       {String title,
-      int episodeId,
-      String openingCrawl,
+      @JsonKey(name: 'episode_id') int episodeId,
+      @JsonKey(name: 'opening_crawl') String openingCrawl,
       String director,
       String producer,
-      DateTime releaseDate,
+      @JsonKey(name: 'release_date') DateTime releaseDate,
       List<String> characters,
       List<String> planets,
       List<String> starships,
@@ -163,11 +166,11 @@ abstract class _$$_FilmEntityCopyWith<$Res>
   @useResult
   $Res call(
       {String title,
-      int episodeId,
-      String openingCrawl,
+      @JsonKey(name: 'episode_id') int episodeId,
+      @JsonKey(name: 'opening_crawl') String openingCrawl,
       String director,
       String producer,
-      DateTime releaseDate,
+      @JsonKey(name: 'release_date') DateTime releaseDate,
       List<String> characters,
       List<String> planets,
       List<String> starships,
@@ -270,11 +273,11 @@ class __$$_FilmEntityCopyWithImpl<$Res>
 class _$_FilmEntity implements _FilmEntity {
   const _$_FilmEntity(
       {required this.title,
-      required this.episodeId,
-      required this.openingCrawl,
+      @JsonKey(name: 'episode_id') required this.episodeId,
+      @JsonKey(name: 'opening_crawl') required this.openingCrawl,
       required this.director,
       required this.producer,
-      required this.releaseDate,
+      @JsonKey(name: 'release_date') required this.releaseDate,
       required final List<String> characters,
       required final List<String> planets,
       required final List<String> starships,
@@ -295,14 +298,17 @@ class _$_FilmEntity implements _FilmEntity {
   @override
   final String title;
   @override
+  @JsonKey(name: 'episode_id')
   final int episodeId;
   @override
+  @JsonKey(name: 'opening_crawl')
   final String openingCrawl;
   @override
   final String director;
   @override
   final String producer;
   @override
+  @JsonKey(name: 'release_date')
   final DateTime releaseDate;
   final List<String> _characters;
   @override
@@ -420,11 +426,11 @@ class _$_FilmEntity implements _FilmEntity {
 abstract class _FilmEntity implements FilmEntity {
   const factory _FilmEntity(
       {required final String title,
-      required final int episodeId,
-      required final String openingCrawl,
+      @JsonKey(name: 'episode_id') required final int episodeId,
+      @JsonKey(name: 'opening_crawl') required final String openingCrawl,
       required final String director,
       required final String producer,
-      required final DateTime releaseDate,
+      @JsonKey(name: 'release_date') required final DateTime releaseDate,
       required final List<String> characters,
       required final List<String> planets,
       required final List<String> starships,
@@ -440,14 +446,17 @@ abstract class _FilmEntity implements FilmEntity {
   @override
   String get title;
   @override
+  @JsonKey(name: 'episode_id')
   int get episodeId;
   @override
+  @JsonKey(name: 'opening_crawl')
   String get openingCrawl;
   @override
   String get director;
   @override
   String get producer;
   @override
+  @JsonKey(name: 'release_date')
   DateTime get releaseDate;
   @override
   List<String> get characters;

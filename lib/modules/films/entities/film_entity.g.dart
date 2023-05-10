@@ -9,11 +9,11 @@ part of 'film_entity.dart';
 _$_FilmEntity _$$_FilmEntityFromJson(Map<String, dynamic> json) =>
     _$_FilmEntity(
       title: json['title'] as String,
-      episodeId: json['episodeId'] as int,
-      openingCrawl: json['openingCrawl'] as String,
+      episodeId: json['episode_id'] as int,
+      openingCrawl: json['opening_crawl'] as String,
       director: json['director'] as String,
       producer: json['producer'] as String,
-      releaseDate: DateTime.parse(json['releaseDate'] as String),
+      releaseDate: DateTime.parse(json['release_date'] as String),
       characters: (json['characters'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -33,11 +33,11 @@ _$_FilmEntity _$$_FilmEntityFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$_FilmEntityToJson(_$_FilmEntity instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'episodeId': instance.episodeId,
-      'openingCrawl': instance.openingCrawl,
+      'episode_id': instance.episodeId,
+      'opening_crawl': instance.openingCrawl,
       'director': instance.director,
       'producer': instance.producer,
-      'releaseDate': instance.releaseDate.toIso8601String(),
+      'release_date': instance.releaseDate.toIso8601String(),
       'characters': instance.characters,
       'planets': instance.planets,
       'starships': instance.starships,

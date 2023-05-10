@@ -7,11 +7,11 @@ part 'film_entity.g.dart';
 class FilmEntity with _$FilmEntity {
   const factory FilmEntity({
     required String title,
-    required int episodeId,
-    required String openingCrawl,
+    @JsonKey(name: 'episode_id') required int episodeId,
+    @JsonKey(name: 'opening_crawl') required String openingCrawl,
     required String director,
     required String producer,
-    required DateTime releaseDate,
+    @JsonKey(name: 'release_date') required DateTime releaseDate,
     required List<String> characters,
     required List<String> planets,
     required List<String> starships,

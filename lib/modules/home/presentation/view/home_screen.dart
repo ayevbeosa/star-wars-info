@@ -49,7 +49,9 @@ class HomeScreen extends StatelessWidget {
                             info: 'People',
                           ),
                           StarWarsInfo(
-                            onTap: () {},
+                            onTap: () {
+                              context.push(RoutePath.films);
+                            },
                             info: 'Films',
                           ),
                           StarWarsInfo(
