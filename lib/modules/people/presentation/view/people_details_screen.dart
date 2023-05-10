@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stars_wars_info/common/widgets/vertical_space.dart';
 import 'package:stars_wars_info/modules/people/bloc/people_bloc.dart';
-import 'package:stars_wars_info/modules/people/domain/people_repository.dart';
+import 'package:stars_wars_info/modules/people/domain/people_repository_impl.dart';
 
 class PeopleDetailsScreen extends StatefulWidget {
   final String id;
@@ -21,7 +21,7 @@ class _PeopleDetailsScreenState extends State<PeopleDetailsScreen> {
 
   @override
   void initState() {
-    _peopleBloc = PeopleBloc(context.read<PeopleRepository>())
+    _peopleBloc = PeopleBloc(context.read<PeopleRepositoryImpl>())
       ..add(GetPeopleById(widget.id));
     super.initState();
   }

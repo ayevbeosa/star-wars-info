@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:stars_wars_info/common/routing/route_path.dart';
+import 'package:stars_wars_info/modules/films/presentation/view/film_details_screen.dart';
 import 'package:stars_wars_info/modules/films/presentation/view/films_screen.dart';
 import 'package:stars_wars_info/modules/home/presentation/view/home_screen.dart';
 import 'package:stars_wars_info/modules/people/presentation/view/people_details_screen.dart';
@@ -27,6 +28,12 @@ final router = GoRouter(
     GoRoute(
       path: RoutePath.films,
       builder: (context, state) => const FilmsScreen(),
+    ),
+    GoRoute(
+      path: RoutePath.filmDetails,
+      builder: (context, state) => FilmDetailsScreen(
+        id: state.queryParameters['id'] ?? '',
+      ),
     ),
   ],
 );
