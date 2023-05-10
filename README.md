@@ -14,7 +14,7 @@ A Flutter project to show relevant info about Star Wars.
 * Data/Model Classes - [freezed](https://pub.dev/packages/freezed)
 
 ## TODO
-1. [ ] films
+1. [x] films
 2. [ ] planets
 3. [ ] species
 4. [ ] starships
